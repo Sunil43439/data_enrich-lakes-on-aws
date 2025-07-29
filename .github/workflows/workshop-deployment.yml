@@ -23,7 +23,7 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v4
         with:
           aws-region: ${{ env.AWS_REGION }}
-          role-to-assume: arn:aws:kms:us-west-2:350834001966:key/5692fcc9-9028-4903-b088-66165e0d3f23::${{ secrets.AWS_ACCOUNT_ID }}:role/${{ secrets.SDLF_CICD_ROLE }}
+          role-to-assume: arn:aws:iam::350834001966:user/sunil::${{ secrets.AWS_ACCOUNT_ID }}:role/${{ secrets.SDLF_CICD_ROLE }}
       - name: Install preprequisites
         run: |
           curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
